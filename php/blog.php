@@ -1,0 +1,332 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Мой профиль</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Lingua project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+<link href="plugins/video-js/video-js.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/blog.css">
+<link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
+<link rel="stylesheet" type="text/scss" href="styles/log.scss">
+<link rel="stylesheet" type="text/css" href="styles/log.css">
+<link rel="icon" href="images/myshkafon2.png" type="image/myshkafon2">
+</head>
+<body>
+
+<div class="super_container">
+
+	<!-- Header -->
+
+	<header class="header">
+			
+		<!-- Top Bar -->
+		<div class="top_bar">
+			<div class="top_bar_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+								<div class="top_bar_phone"><span class="top_bar_title">e-mail:</span>smartmice@bk.ru</div>
+								<div class="top_bar_right ml-auto">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>				
+		</div>
+
+		<!-- Header Content -->
+		<div class="header_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="header_content d-flex flex-row align-items-center justify-content-start">
+							<image class="logo" href="index.html" src="images/myshkabezfona (1).png"></image>
+							<div class="logo_container mr-auto">
+								
+								<a href="index.html">
+									<div class="logo_text">Smart Mice</div>
+								</a>
+							</div>
+							<nav class="main_nav_contaner">
+								<ul class="main_nav">
+									<li class="active"><a href="index.html">Меню</a></li>
+									<li><a href="courses.html">Курсы</a></li>
+									<li><a href="instructors.html">О нас</a></li>
+									<li><a href="#">События</a></li>
+									<li><a href="contact.html">Контакты</a></li>
+								</ul>
+							</nav>
+							<div class="header_content_right ml-auto text-right">
+								<div class="header_search">
+									<div class="search_form_container">
+										<form action="#" id="search_form" class="search_form trans_400">
+											<input type="search" class="header_search_input trans_400" placeholder="Type for Search" required="required">
+											<div class="search_button">
+												<i class="fa fa-search" aria-hidden="true"></i>
+											</div>
+										</form>
+									</div>
+								</div>
+
+								<!-- Hamburger -->
+
+								<div class="user"><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></div>
+								<div class="hamburger menu_mm">
+									<i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+	<!-- Menu -->
+
+	<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+		<div class="search">
+			<form action="#" class="header_search_form menu_mm">
+				<input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+				<button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+					<i class="fa fa-search menu_mm" aria-hidden="true"></i>
+				</button>
+			</form>
+		</div>
+		<nav class="menu_nav">
+			<ul class="menu_mm">
+				<li class="menu_mm"><a href="index.html">Меню</a></li>
+				<li class="menu_mm"><a href="courses.html">Courses</a></li>
+				<li class="menu_mm"><a href="instructors.html">Instructors</a></li>
+				<li class="menu_mm"><a href="#">Events</a></li>
+				<li class="menu_mm"><a href="blog.html">Blog</a></li>
+				<li class="menu_mm"><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="menu_extra">
+			<div class="menu_phone"><span class="menu_title">e-mail:</span>smartmice@bk.ru</div>
+			<div class="menu_social">
+				<span class="menu_title">follow us</span>
+				<ul>
+					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Home -->
+
+	<section style="background-color: #eee;">
+	
+	  
+		<div class="row">
+		  <div class="col-lg-4">
+		  <div class="card mb-4">
+					<div class="card-body text-center">
+						<form action="update_profile.php" method="post" enctype="multipart/form-data">
+							<input type="text" name="name" placeholder="Ваше имя" value="<?php echo $_SESSION['name']; ?>" required>
+							<input type="email" name="email" placeholder="Email" value="<?php echo $_SESSION['email']; ?>" required>
+							<input type="file" name="avatar">
+							<button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary ms-1">Сохранить изменения</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-4 mb-lg-0">
+			  <div class="card-body p-0">
+				<ul class="list-group list-group-flush rounded-3">
+				  <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+					<i class="fas fa-globe fa-lg text-warning"></i>
+					<p class="mb-0">https://mdbootstrap.com</p>
+				  </li>
+				  <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+					<i class="fab fa-github fa-lg text-body"></i>
+					<p class="mb-0">mdbootstrap</p>
+				  </li>
+				  <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+					<i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
+					<p class="mb-0">@mdbootstrap</p>
+				  </li>
+				  <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+					<i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+					<p class="mb-0">mdbootstrap</p>
+				  </li>
+				  <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+					<i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
+					<p class="mb-0">mdbootstrap</p>
+				  </li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-lg-8">
+			<div class="card mb-4">
+			  <div class="card-body">
+				<div class="row">
+				  <div class="col-sm-3">
+					<p class="mb-0">ФИО</p>
+				  </div>
+				  <div class="col-sm-9">
+					<p class="text-muted mb-0" name="login"><?php echo $_SESSION['name']; ?></p>
+				  </div>
+				</div>
+				<hr>
+				<div class="row">
+				  <div class="col-sm-3">
+					<p class="mb-0">E-mail:</p>
+				  </div>
+				  <div class="col-sm-9">
+					<p class="text-muted mb-0" name="email"><?php echo $_SESSION['email']; ?></p>
+				  </div>
+				</div>
+				<hr>
+				<div class="row">
+				  <div class="col-sm-3">
+					<p class="mb-0" name="pho">Phone</p>
+				  </div>
+				  <div class="col-sm-9">
+					<p class="text-muted mb-0">+7(XXX)XXX-XX-XX</p>
+				  </div>
+				</div>
+				<hr>
+				<div class="row">
+				  <div class="col-sm-3">
+					<p class="mb-0">Место рождения</p>
+				  </div>
+				  <div class="col-sm-9">
+					<p class="text-muted mb-0">г.Тюмень</p>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-6">
+				<div class="card mb-4 mb-md-0">
+				  <div class="card-body">
+					<p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
+					</p>
+					<p class="mb-1" style="font-size: .77rem;">Progress</p>
+					<div class="progress rounded" style="height: 5px;">
+					  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+						aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<p class="mt-4 mb-1" style="font-size: .77rem;">Level 1</p>
+					<div class="progress rounded" style="height: 5px;">
+					  <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+						aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<p class="mt-4 mb-1" style="font-size: .77rem;">Statistic</p>
+					<div class="progress rounded" style="height: 5px;">
+					  <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+						aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+					<div class="progress rounded" style="height: 5px;">
+					  <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
+						aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
+					<div class="progress rounded mb-2" style="height: 5px;">
+					  <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+						aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-md-6">
+				<div class="card mb-4 mb-md-0">
+				  <div class="card-body">
+					<p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
+					</p>
+					<p class="mb-1" style="font-size: .77rem;">Web Design</p>
+					<div class="progress rounded" style="height: 5px;">
+					  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+						aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+					<div class="progress rounded" style="height: 5px;">
+					  <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+						aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+					<div class="progress rounded" style="height: 5px;">
+					  <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+						aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+					<div class="progress rounded" style="height: 5px;">
+					  <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
+						aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
+					<div class="progress rounded mb-2" style="height: 5px;">
+					  <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+						aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</section>
+
+
+<!-- <div class="form-structor">
+<div class="signup">
+	<h2 class="form-title" id="signup"><span>or</span>Регистрация</h2>
+	<div class="form-holder">
+		<input type="text" class="input" placeholder="Имя" />
+		<input type="email" class="input" placeholder="Email" />
+		<input type="password" class="input" placeholder="Пароль" />
+		<input type="password" class="input" placeholder="Подтвердите пароль" />
+	</div>
+	<button class="submit-btn">Зарегистрироваться</button>
+</div>
+<div class="login slide-up">
+	<div class="center">
+		<h2 class="form-title" id="login"><span>or</span>Войти</h2>
+		<div class="form-holder">
+			<input type="email" class="input" placeholder="Email" />
+			<input type="password" class="input" placeholder="Пароль" />
+		</div>
+		<button class="submit-btn">Войти</button>
+	</div>
+</div>
+</div> -->
+	
+</div>
+</div>
+
+	
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="js/blog.js"></script>
+<script src="js/log.js"></script>
+</body>
+</html>

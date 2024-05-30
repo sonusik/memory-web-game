@@ -1,0 +1,266 @@
+html {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(325deg, #03001e 0%, #03b0c0 30%, #38e6ec 70%, #fdeff9 100%);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+.game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.controls {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    background: #282a3a;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 0;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.disabled {
+    display: flex;
+    color: #757575;
+}
+
+.stats {
+    color: #fff;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.board-container {
+    width: 600px;
+    height: 500px;
+    position: relative;
+}
+
+.board,
+.win {
+    border-radius: 5px;
+    box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
+    background: linear-gradient(135deg, #03001e 0%, #03b7c0 0%, #38e3ec 50%, #fdeff9 100%);
+    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+.board {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px;
+}
+
+.board-container.flipped .board {
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.board-container.flipped .win {
+    transform: rotateY(0) rotateZ(0);
+}
+
+.card {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background: #282a3a;
+    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg) rotateZ(50deg);
+    font-size: 28pt;
+    user-select: none;
+    text-align: center;
+    line-height: 100px;
+    background: #fdf8e6;
+}
+
+.card.flipped .card-front {
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.card.flipped .card-back {
+    transform: rotateY(0) rotateZ(0);
+}
+
+.win {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: #fdf8e6;
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.win-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 21pt;
+    color: #282a3a;
+}
+
+.highlight {
+    color: #78edff;
+}
+
+.rating {
+    position: absolute;
+    top: 15%;
+    right: 0;
+    left: 70%;
+    padding: 20px;
+    color: #fff;
+    font-size: 18pt;
+}
+
+.rating h2 {
+    font-size: 24pt;
+}
+
+.rating ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rating li {
+    margin-bottom: 10px;
+}
+@media only screen and (max-width: 768px) {
+    .rating {
+        margin-top: -40%;
+        margin-right: 20%;
+        margin-left: -10%;
+        font-size: 14px; /* Уменьшаем размер шрифта для мобильных устройств */
+    }
+    .rating h2 {
+        font-size: 24pt;
+    }
+    
+    .rating ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .rating li {
+        margin-bottom: 10px;
+    }
+}
+@media only screen and (max-width: 959px) {
+    .rating {
+        margin-top: -20%;
+        margin-right: 20%;
+        margin-left: -5%;
+        font-size: 14px; /* Уменьшаем размер шрифта для мобильных устройств */
+    }
+    .rating h2 {
+        font-size: 24pt;
+    }
+    
+    .rating ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .rating li {
+        margin-bottom: 10px;
+    }
+}
+.profile-button {
+    margin-right: 70%;
+    font-size: 30px; /* Установите желаемый размер шрифта */
+    background-color: #282a3a; /* Установите серый цвет фона */
+    border: none; /* Уберите границу кнопки */
+    border-radius: 50%; /* Установите радиус скругления 50%, чтобы сделать кнопку круглой */
+    width: 80px; /* Установите желаемую ширину кнопки */
+    height: 80px; /* Установите желаемую высоту кнопки */
+    cursor: pointer; /* Установите указатель мыши в виде руки */
+}
+.autorization-button {
+    margin-right: 80%;
+    margin-top: 0.5%;
+    font-size: 30px; /* Установите желаемый размер шрифта */
+    background-color: #282a3a; /* Установите серый цвет фона */
+    border: none; /* Уберите границу кнопки */
+    border-radius: 50%; /* Установите радиус скругления 50%, чтобы сделать кнопку круглой */
+    width: 60px; /* Установите желаемую ширину кнопки */
+    height: 60px; /* Установите желаемую высоту кнопки */
+    cursor: pointer; /* Установите указатель мыши в виде руки */
+    text-decoration: none; /* Добавьте это свойство, чтобы убрать подчеркивание */
+    display: flex; /* Добавьте это свойство для правильного выравнивания */
+    justify-content: center; /* Добавьте это свойство для правильного выравнивания */
+    align-items: center; /* Добавьте это свойство для правильного выравнивания */
+    color: #fff; /* Добавьте это свойство для цвета текста */
+    box-sizing: border-box; /* Добавляем это свойство */
+    padding: 20px; /* Добавляем отступ внутри круга */
+}
+
+/* Окно профиля */
+.profile-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.profile-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+

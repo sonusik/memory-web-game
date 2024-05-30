@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="./reg2.css">
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (email == "") {
+                alert("Пожалуйста, введите ваш email.");
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert("Пожалуйста, введите корректный email.");
+                return false;
+            }
+
+            if (password == "") {
+                alert("Пожалуйста, введите ваш пароль.");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Пароль должен содержать не менее 6 символов.");
+                return false;
+            }
+
+            // Можно добавить другие проверки для пароля по необходимости
+
+            return true; // Если все проверки пройдены успешно
+        }
+    </script>
+    
+</head>
+
+<body>
+
+    <section>
+        <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+        <div class="signin">
+            <div class="content">
+                <h2>Регистрация</h2>
+                <form action="register.php" method="post">
+                <div class="form">
+                    <div class="inputBox">
+                        <input type="text" id="username" name="username" required> <i>Имя пользователя</i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="email" id="email" name="email" required> <i>E-mail</i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" id="password" name="password" required> <i>Пароль</i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" id="repeatPassword" name="repeatPassword" required> <i>Повторите пароль</i>
+                    </div>
+                    <div class="links">
+                        <a href="register.html">Войти</a>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" value="Зарегистрироваться" onclick="return validateForm()">
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
